@@ -32,7 +32,7 @@ seems to be around 3x slower than implementations using Torch.
 
 ## reference
 
-\[https://github.com/anishathalye/neural-style \]: https://github.com/anishathalye/neural-style
+\[neural-style \]: https://github.com/anishathalye/neural-style
 
 \[net\]: http://www.vlfeat.org/matconvnet/models/beta16/imagenet-vgg-verydeep-19.mat
 
