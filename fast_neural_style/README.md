@@ -1,6 +1,6 @@
 # Fast neural style transfer
 
-A blog with the paper [fast neural style](http://arxiv.org/pdf/1603.08155v1.pdf) in []
+A blog with the paper [fast neural style](http://arxiv.org/pdf/1603.08155v1.pdf) in [http://hacker.duanshishi.com/?p=1693](http://hacker.duanshishi.com/?p=1693)
 In an attempt to learn Tensorflow I've implemented an Image Transformation Network as described in [Perceptual Losses for Real-Time Style Transfer and Super-Resolution](http://arxiv.org/abs/1603.08155) by Johnson et al.
 
 This technique uses loss functions based on a perceptual similarity and style similarity as described by [Gatys et al](http://arxiv.org/abs/1508.06576) to train a transformation network to synthesize the style of one image with the content of arbitrary images. After it's trained for a particular style it can be used to generate stylized images in one forward pass through the transformer network as opposed to 500-2000 forward + backward passes through a pretrained image classification net which is the direct approach.
