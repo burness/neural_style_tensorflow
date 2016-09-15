@@ -1,7 +1,6 @@
 # Fast neural style transfer
 
-A short writeup and example images are up on [my blog](http://olavnymoen.com/2016/07/07/image-transformation-network).
-
+A blog with the paper [fast neural style](http://arxiv.org/pdf/1603.08155v1.pdf) in []
 In an attempt to learn Tensorflow I've implemented an Image Transformation Network as described in [Perceptual Losses for Real-Time Style Transfer and Super-Resolution](http://arxiv.org/abs/1603.08155) by Johnson et al.
 
 This technique uses loss functions based on a perceptual similarity and style similarity as described by [Gatys et al](http://arxiv.org/abs/1508.06576) to train a transformation network to synthesize the style of one image with the content of arbitrary images. After it's trained for a particular style it can be used to generate stylized images in one forward pass through the transformer network as opposed to 500-2000 forward + backward passes through a pretrained image classification net which is the direct approach.
@@ -14,9 +13,9 @@ First get the dependecies (COCO training set images and VGG model weights):
 
 To train a model for fast stylizing:
 
-`python train_fast_neural_style.py --TRAIN_IMAGES_PATH coco_img_path --STYLE_IMAGES style.png --BATCH_SIZE 4`
+`python train_fast_neural_style.py --TRAIN_IMAGES_PATH coco_img_path --STYLE_IMAGES style.png --BATCH_SIZE 8`
 
-Where `--TRAIN_IMAGES_PATH` points to a directory of JPEGs to train the model. The paper uses the [COCO image dataset](http://msvocds.blob.core.windows.net/coco2014/train2014.zip) (13GB). With my 2GB GTX960 card I can do a batch_size of 3 images. The paper trains the model for 2 epochs (160.000/BATCH_SIZE iteration).
+Where `--TRAIN_IMAGES_PATH` points to a directory of JPEGs to train the model. The paper uses the [COCO image dataset](http://msvocds.blob.core.windows.net/coco2014/train2014.zip) (13GB). With my K20 card I can do a batch_size of 8 images. The paper trains the model for 2 epochs.
 
 To generate images fast with an already trained model:
 
